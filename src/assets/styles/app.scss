@@ -94,3 +94,8 @@
 
 @import 'lite-youtube-embed/src/lite-yt-embed.css';
 @import 'mmenu-light/dist/mmenu-light.css';
+
+/* NOVA homepage libs (JS imports these libs; their CSS lives here) */
+@import 'aos/dist/aos.css';
+@import 'swiper/swiper.css';
+@import 'swiper/modules/pagination.css';

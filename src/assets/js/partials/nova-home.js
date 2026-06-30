@@ -8,12 +8,11 @@
    ═══════════════════════════════════════════ */
 import Lenis from 'lenis';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
 import Swiper from 'swiper';
 import { Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
 import Alpine from 'alpinejs';
+// NOTE: AOS + Swiper CSS are imported via app.scss (the theme's SCSS pipeline),
+// not here — Raed's webpack JS entry has no css-loader for JS-imported .css.
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 

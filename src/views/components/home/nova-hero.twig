@@ -1,0 +1,33 @@
+{# NOVA — Hero. Ported from nova-eyewear-site/index.html (hero section). #}
+<section class="nova-hero relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-nova-black">
+  <div class="absolute inset-0 bg-nova-black"></div>
+
+  <div class="hero-orb hero-orb-core absolute w-[500px] h-[500px] rounded-full blur-[160px] opacity-[0.07]" style="background:#C8D6E5;top:20%;left:-10%"></div>
+  <div class="hero-orb hero-orb-day absolute w-[400px] h-[400px] rounded-full blur-[140px] opacity-[0.06]" style="background:#F5C842;top:60%;right:-8%"></div>
+  <div class="hero-orb hero-orb-night absolute w-[450px] h-[450px] rounded-full blur-[150px] opacity-[0.06]" style="background:#E84545;bottom:-10%;left:30%"></div>
+
+  <div class="hero-glasses absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[600px] md:w-[750px] lg:w-[900px] opacity-[0.12] pointer-events-none select-none">
+    <img id="hero-glass-core" src="{{ 'images/nova/core-side.webp' | asset }}" alt="" class="absolute inset-0 w-full h-full object-contain hero-glass-img opacity-100" />
+    <img id="hero-glass-day" src="{{ 'images/nova/day-front.webp' | asset }}" alt="" class="absolute inset-0 w-full h-full object-contain hero-glass-img opacity-0" />
+    <img id="hero-glass-night" src="{{ 'images/nova/night-side.webp' | asset }}" alt="" class="absolute inset-0 w-full h-full object-contain hero-glass-img opacity-0" />
+    <div class="w-full" style="padding-bottom:75%"></div>
+  </div>
+
+  <div class="hero-ring absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[650px] md:h-[650px] rounded-full border border-white/[0.03]"></div>
+  <div class="hero-ring-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[450px] md:h-[450px] rounded-full border border-white/[0.02]"></div>
+
+  <div class="relative z-10 text-center px-6 max-w-3xl">
+    <p class="hero-subtitle text-nova-mid text-[11px] tracking-[0.5em] uppercase mb-8">UV Protection Eyewear</p>
+    <h1 class="hero-title text-[clamp(3rem,8vw,7rem)] font-black leading-[0.95] tracking-tight mb-8">Protect<br/>Your Vision</h1>
+    <p class="hero-subtitle text-nova-light text-lg md:text-xl max-w-md mx-auto mb-14 font-light leading-relaxed">Three lenses. Three purposes.<br class="hidden sm:block"/> Designed for your day, your night, and everything in between.</p>
+    <div class="hero-cta flex flex-wrap justify-center gap-3">
+      <a href="#nova-products" class="flex items-center gap-2.5 border border-white/10 px-6 py-3 text-[12px] tracking-[0.1em] uppercase hover:bg-white/[0.04] transition-all duration-300"><span class="w-2.5 h-2.5 rounded-full bg-core"></span> Core</a>
+      <a href="#nova-products" class="flex items-center gap-2.5 border border-white/10 px-6 py-3 text-[12px] tracking-[0.1em] uppercase hover:bg-white/[0.04] transition-all duration-300"><span class="w-2.5 h-2.5 rounded-full bg-day"></span> Day</a>
+      <a href="#nova-products" class="flex items-center gap-2.5 border border-white/10 px-6 py-3 text-[12px] tracking-[0.1em] uppercase hover:bg-white/[0.04] transition-all duration-300"><span class="w-2.5 h-2.5 rounded-full bg-night"></span> Night</a>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40 z-10">
+    <div class="w-px h-10 bg-gradient-to-b from-nova-white to-transparent animate-pulse"></div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+{#
+| Variable         | Type       | Description                                                         |
+|------------------|------------|---------------------------------------------------------------------|
+| page             | object     |                                                                     |
+| page.title       | string     | *could be html                                                      |
+| page.slug        | string     | ex: "cat.show"                                                      |
+#}
+{% extends "layouts.master" %}
+{% block content %}
+    {# ── NOVA homepage — ported section-for-section from nova-eyewear-site/index.html.
+         Header/footer + all commerce templates remain Raed's (untouched). ── #}
+    <div class="nova-home no-aos">
+        {% include 'components.home.nova-hero' %}
+        {% include 'components.home.nova-marquee' %}
+        {% include 'components.home.nova-collection' %}
+        {% include 'components.home.nova-how' %}
+        {% include 'components.home.nova-compare' %}
+        {% include 'components.home.nova-science' %}
+        {% include 'components.home.nova-story' %}
+        {% include 'components.home.nova-testimonials' %}
+        {% include 'components.home.nova-faq' %}
+        {% include 'components.home.nova-newsletter' %}
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script defer src="{{ 'home.js' | asset }}"></script>
+{% endblock %}

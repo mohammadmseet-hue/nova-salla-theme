@@ -1,0 +1,28 @@
+{# NOVA — FAQ accordion (vanilla JS toggle via .nova-faq-item / .is-open). #}
+{% set faqs = [
+  { q: "What's the difference between the three lenses?", a: "<strong class='text-nova-light'>Core</strong> (transparent) = pure UV400 protection, zero color change. <strong class='text-nova-light'>Day</strong> (yellow) = UV + blue light filter for migraines. <strong class='text-nova-light'>Night</strong> (red) = UV + blocks blue/green light to boost melatonin for sleep." },
+  { q: "Can I wear the Night lenses during the day?", a: "You can, but the red tint shifts color perception significantly. For daytime use, the Day lenses give you the best balance of protection and clarity." },
+  { q: "How long before bed should I wear the Night lenses?", a: "1-2 hours before your intended bedtime. This gives your body enough time to ramp up melatonin production naturally." },
+  { q: "Do the Day lenses really help with migraines?", a: "Yellow lenses filter the blue light wavelengths (380-500nm) that trigger photophobia — a key migraine trigger. Many users report significant improvement in headache frequency." },
+  { q: "Do you ship internationally?", a: "Currently we ship within Saudi Arabia. International shipping coming soon — subscribe to our newsletter for updates." },
+  { q: "What is your return policy?", a: "30-day hassle-free returns. If you're not satisfied, send them back for a full refund. No questions asked." }
+] %}
+<section id="nova-faq" class="nova-section nova-divider">
+  <div class="max-w-2xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="text-nova-mid text-[11px] tracking-[0.4em] uppercase mb-3">Questions</p>
+      <h2 class="section-heading text-3xl md:text-4xl font-bold tracking-tight">FAQ</h2>
+    </div>
+    <div class="space-y-0" data-aos="fade-up">
+      {% for faq in faqs %}
+        <div class="nova-faq-item border-b border-white/[0.06]">
+          <button type="button" class="nova-faq-toggle w-full flex items-center justify-between py-5 text-left">
+            <span class="text-sm font-medium pr-6">{{ faq.q }}</span>
+            <svg class="nova-faq-icon w-4 h-4 text-nova-mid shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="nova-faq-body"><p class="text-nova-mid text-sm leading-relaxed pb-5">{{ faq.a|raw }}</p></div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

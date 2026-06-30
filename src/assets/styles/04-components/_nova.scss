@@ -1,0 +1,78 @@
+/* ═══════════════════════════════════════════
+   NOVA — homepage design system
+   Ported from nova-eyewear-site/src/style.css
+   Scoped under .nova-home so Raed's commerce
+   pages (product, cart, checkout) are untouched.
+   ═══════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+.nova-home {
+  /* tokens (also exposed as Tailwind colors) */
+  --color-nova-black: #000000;
+  --color-nova-charcoal: #141414;
+  --color-nova-mid: #6B6B6B;
+  --color-nova-light: #A0A0A0;
+  --color-nova-white: #FFFFFF;
+  --color-core: #C8D6E5;
+  --color-day: #F5C842;
+  --color-night: #E84545;
+  --ease-nova: cubic-bezier(0.16, 1, 0.3, 1);
+
+  background-color: #000;
+  color: #fff;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+
+  ::selection { background: #fff; color: #000; }
+
+  /* section rhythm (NOVA --spacing-section: 7rem) */
+  .nova-section { padding-top: 7rem; padding-bottom: 7rem; }
+
+  /* hairline section divider */
+  .nova-divider { border-top: 1px solid rgba(255, 255, 255, 0.04); }
+
+  /* hero floating orbs + rings */
+  .hero-orb { position: absolute; border-radius: 9999px; pointer-events: none; }
+  .hero-ring,
+  .hero-ring-2 { position: absolute; border-radius: 9999px; pointer-events: none; }
+
+  /* product card image zoom on hover */
+  .product-card img { transition: transform 0.8s var(--ease-nova); }
+  .product-card:hover img { transform: scale(1.04); }
+
+  /* accent glows */
+  .glow-core  { box-shadow: 0 0 80px 20px rgba(200, 214, 229, 0.08); }
+  .glow-day   { box-shadow: 0 0 80px 20px rgba(245, 200, 66, 0.08); }
+  .glow-night { box-shadow: 0 0 80px 20px rgba(232, 69, 69, 0.08); }
+
+  /* benefit number/icon circles */
+  .benefit-icon {
+    width: 48px; height: 48px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* FAQ accordion (vanilla, no Alpine dependency) */
+  .nova-faq-item .nova-faq-body {
+    overflow: hidden; max-height: 0;
+    transition: max-height 0.4s var(--ease-nova);
+  }
+  .nova-faq-item.is-open .nova-faq-body { max-height: 320px; }
+  .nova-faq-item.is-open .nova-faq-icon { transform: rotate(45deg); }
+  .nova-faq-icon { transition: transform 0.3s var(--ease-nova); }
+
+  /* AOS-friendly reveal fallback when JS/AOS is unavailable */
+  &.no-aos [data-aos] { opacity: 1 !important; transform: none !important; }
+
+  /* let the NOVA product grid restyle the Salla web component cards */
+  salla-products-list::part(base) {
+    background: transparent;
+  }
+}
+
+/* keep the marquee readable if Tailwind animation utility is purged */
+@keyframes nova-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

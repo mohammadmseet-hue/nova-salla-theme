@@ -1,0 +1,15 @@
+{# NOVA — The Collection. Real store products via the Salla web component
+   (add-to-cart + product data stay native — nothing hardcoded). #}
+<section id="nova-products" class="nova-section">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <p class="text-nova-mid text-[11px] tracking-[0.4em] uppercase mb-3">The Collection</p>
+      <h2 class="section-heading text-4xl md:text-5xl font-bold tracking-tight">Three Lenses. Three Purposes.</h2>
+      <p class="text-nova-light text-sm max-w-md mx-auto mt-5 font-light leading-relaxed">Core for everyday clarity. Day for screens &amp; migraines. Night for deeper sleep.</p>
+    </div>
+
+    <div class="nova-products">
+      <salla-products-list source="latest" limit="4"></salla-products-list>
+    </div>
+  </div>
+</section>
